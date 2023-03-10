@@ -12,7 +12,7 @@
 }
 else
 {
-  <div class="SearchForm">
+  <div class="justify-right">
   @using (Html.BeginForm("Find", "Stylists", "post"))
   {
     @Html.Label("Search for a stylist")
@@ -32,8 +32,4 @@ else
 <br>
 <span></span>
 <br>
-<div class="bottom-link">
-<span class="span-left">@Html.ActionLink("Add new stylist", "Create")</span>
-<span class="span-center">@Html.ActionLink("Add new Client", "Create", "Clients")</span>
-<span class="span-right">@Html.ActionLink("Home", "Index", "Home")</span>
-</div>
+

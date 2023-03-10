@@ -21,7 +21,7 @@ div#footer {
 	padding: 1rem;
 }
 
-.SearchForm {
+.justify-right {
 	float: right;
 }
 
@@ -40,6 +40,10 @@ div#footer {
 	text-align: center;
 }
 
+.inline {
+	display: inline-block;
+}
+
 .btn {
 	color: #333;
 	background-color: #eee;
@@ -53,4 +57,13 @@ ul {
 h1 {
 	text-align: center;
 	margin-bottom: 40px;
+}
+
+p{
+	line-height: .5em;
+}
+
+.client-links{
+	float: right;
+	margin-top: -70px;
 }
