@@ -8,9 +8,10 @@
 
 @using (Html.BeginForm())
 {
-  @Html.LabelFor(model => model.Name)
+  @Html.LabelFor(model => model.Name)<span>:</span>
   @Html.TextBoxFor(model => model.Name)
-
+  <p></p>
   <input type="submit" value="Add new stylist" class="btn btn-primary" />
 }
+<p></p>
 <p>@Html.ActionLink("Show all stylists", "Index")</p>
