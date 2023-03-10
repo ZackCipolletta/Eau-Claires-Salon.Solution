@@ -1,24 +1,43 @@
 body {
 	background-color: rgb(28, 26, 26);
-  color: white;
+	color: white;
 	font-weight: bolder;
 	font-size: larger;
 }
 
 div#footer {
-  position:fixed;
-  bottom:0px;
-  left:0px;
-  width:100%;
-  color:#CCC;
-  background:#333;
-  padding:8px;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	color: #CCC;
+	background: #333;
+	padding: 8px;
 }
 
 .container {
 	max-width: 800px;
 	margin: 0 auto;
 	padding: 1rem;
+}
+
+.SearchForm {
+	float: right;
+}
+
+.bottom-link {
+	display: flex;
+	justify-content: space-between;
+}
+
+.span-left {
+	display: inline-block;
+	text-align: left;
+}
+
+.span-center {
+	display: inline-block;
+	text-align: center;
 }
 
 .btn {

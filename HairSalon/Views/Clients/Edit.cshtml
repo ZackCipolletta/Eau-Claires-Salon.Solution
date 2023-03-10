@@ -12,12 +12,12 @@
 {
   @Html.HiddenFor(model => model.ClientId)
 
-  @Html.LabelFor(model => model.Name)
+  @Html.LabelFor(model => model.Name)<span>&nbsp;</span>
   @Html.EditorFor(model => model.Name)
-
-  @Html.LabelFor(model => model.Stylist)
+  <p></p>
+  @Html.LabelFor(model => model.Stylist)<span>&nbsp;</span>
   @Html.DropDownList("StylistId")
-
-  <input type="submit" value="Save" />
+  <p></p>
+  <span>&emsp;&emsp;&emsp;&nbsp;</span><input type="submit" value="Save" />
 }
 <p>@Html.ActionLink("Back to list", "Index")</p>
