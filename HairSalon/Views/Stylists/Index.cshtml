@@ -11,6 +11,15 @@
   <h3>No stylists have been added yet!</h3>
 } 
 
+@using (Html.BeginForm("Find", "Restaurants", "post"))
+{
+  @Html.Label("Search for a stylist")
+  <p>@Html.TextBox("queryString")</p>
+  <p></p>
+  <p><input type="submit" value="Search for a stylist" class="button"></p>
+}
+
+
 <ul>
   @foreach(Stylist stylist in Model)
   {

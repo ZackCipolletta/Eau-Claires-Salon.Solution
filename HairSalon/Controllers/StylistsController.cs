@@ -1,8 +1,9 @@
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using HairSalon.Models;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.EntityFrameworkCore;
 
 namespace HairSalon.Controllers
 {
@@ -27,7 +28,7 @@ namespace HairSalon.Controllers
     }
 
     [HttpPost]
-    public ActionResult Create (Stylist stylist)
+    public ActionResult Create(Stylist stylist)
     {
       _db.Stylists.Add(stylist);
       _db.SaveChanges();
@@ -43,6 +44,13 @@ namespace HairSalon.Controllers
     {
       Stylist thisStylist = _db.Stylists.FirstOrDefault(client => client.StylistId == id);
       return View(thisStylist);
+    }
+
+    [HttpPost]
+    public ActionResult Find(string queryString)
+    {
+      List<Stylist> model = _db.Stylists.Where(model => model.Name.Contains(queryString)).ToList();
+      return View("Index", model);
     }
 
     public ActionResult Delete(int id)
