@@ -5,10 +5,10 @@
 
 // Note that it's also possible to list global using directives that are applied to an entire project. To learn more about implicit and global using directives, visit the MS documentation on implicit using directives (which also includes global using directives).
 
-//namespace ToDoList
+//namespace HairSalon
 // {
 //  if a file has multiple classes in it, the namespace statement will apply to all classes. This means that we cannot use namespace statements when a single file has multiple namespaces in it.
-// namespace ToDoList;
+// namespace HairSalon;
 
 // class Program << ---These are also not necessary
 // {
@@ -39,9 +39,9 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using ToDoList.Models;
+using HairSalon.Models;
 
-namespace ToDoList
+namespace HairSalon
 {
   class Program
   {
@@ -51,7 +51,7 @@ namespace ToDoList
 
       builder.Services.AddControllersWithViews();
 
-      builder.Services.AddDbContext<ToDoListContext>(
+      builder.Services.AddDbContext<HairSalonContext>(
         dbContextOptions => dbContextOptions
           .UseMySql(
             builder.Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(builder.Configuration["ConnectionStrings:DefaultConnection"]

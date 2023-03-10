@@ -1,16 +1,16 @@
 using Microsoft.AspNetCore.Mvc;
-using ToDoList.Models;
+using HairSalon.Models;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 
-namespace ToDoList.Controllers
+namespace HairSalon.Controllers
 {
   public class StylistsController : Controller
   {
 
-    private readonly ToDoListContext _db;
-    public StylistsController(ToDoListContext db)
+    private readonly HairSalonContext _db;
+    public StylistsController(HairSalonContext db)
     {
       _db = db;
     }
@@ -36,12 +36,12 @@ namespace ToDoList.Controllers
 
     public ActionResult Details(int id)
     {
-      Stylist thisStylist = _db.Stylists.Include(stylist => stylist.Items).FirstOrDefault(stylist => stylist.StylistId == id);
+      Stylist thisStylist = _db.Stylists.Include(stylist => stylist.Clients).FirstOrDefault(stylist => stylist.StylistId == id);
       return View(thisStylist);
     }
     public ActionResult Edit(int id)
     {
-      Stylist thisStylist = _db.Stylists.FirstOrDefault(item => item.StylistId == id);
+      Stylist thisStylist = _db.Stylists.FirstOrDefault(client => client.StylistId == id);
       return View(thisStylist);
     }
 

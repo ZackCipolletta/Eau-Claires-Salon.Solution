@@ -1,9 +1,9 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ToDoList.Models;
+using HairSalon.Models;
 using System.Collections.Generic;
 using System;
 
-namespace ToDoList.Tests
+namespace HairSalon.Tests
 {
   [TestClass]
   public class StylistTests : IDisposable
@@ -67,18 +67,18 @@ namespace ToDoList.Tests
   }
 
     [TestMethod]
-    public void AddItem_AssociatesItemWithStylist_ItemList()
+    public void AddClient_AssociatesClientWithStylist_ClientList()
     {
       // Arrange
       string description = "Walk the dog.";
-      Item newItem = new Item(description);
-      List<Item> newList = new List<Item> { newItem };
+      Client newClient = new Client(description);
+      List<Client> newList = new List<Client> { newClient };
       string name = "Work";
       Stylist newStylist = new Stylist(name);
-      newStylist.AddItem(newItem);
+      newStylist.AddClient(newClient);
 
       // Act
-      List<Item> result = newStylist.Items;
+      List<Client> result = newStylist.Clients;
 
       // Assert
       CollectionAssert.AreEqual(newList, result);

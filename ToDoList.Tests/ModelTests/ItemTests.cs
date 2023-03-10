@@ -1,23 +1,23 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.Extensions.Configuration;
 using System.Collections.Generic;
-using ToDoList.Models;
+using HairSalon.Models;
 using System;
 
-namespace ToDoList.Tests
+namespace HairSalon.Tests
 {
   [TestClass]
-  public class ItemTests : IDisposable
+  public class ClientTests : IDisposable
   {
 
     public IConfiguration Configuration { get; set; }
 
     public void Dispose()
     {
-      Item.ClearAll();
+      Client.ClearAll();
     }
     
-    public ItemTests()
+    public ClientTests()
     {
       IConfigurationBuilder builder = new ConfigurationBuilder()
           .AddJsonFile("appsettings.json");
@@ -25,10 +25,10 @@ namespace ToDoList.Tests
       DBConfiguration.ConnectionString = Configuration["ConnectionStrings:TestConnection"];
     }
     // [TestMethod]
-    // public void ItemConstructor_CreatesInstanceOfItem_Item()
+    // public void ClientConstructor_CreatesInstanceOfClient_Client()
     // {
-    //   Item newItem = new Item("test");
-    //   Assert.AreEqual(typeof(Item), newItem.GetType());
+    //   Client newClient = new Client("test");
+    //   Assert.AreEqual(typeof(Client), newClient.GetType());
     // }
 
     // [TestMethod]
@@ -38,8 +38,8 @@ namespace ToDoList.Tests
     //   string description = "Walk the dog.";
 
     //   //Act
-    //   Item newItem = new Item(description);
-    //   string result = newItem.Description;
+    //   Client newClient = new Client(description);
+    //   string result = newClient.Description;
 
     //   //Assert
     //   Assert.AreEqual(description, result);
@@ -50,88 +50,88 @@ namespace ToDoList.Tests
     // {
     //   //Arrange
     //   string description = "Walk the dog.";
-    //   Item newItem = new Item(description);
+    //   Client newClient = new Client(description);
 
     //   //Act
     //   string updatedDescription = "Do the dishes";
-    //   newItem.Description = updatedDescription;
-    //   string result = newItem.Description;
+    //   newClient.Description = updatedDescription;
+    //   string result = newClient.Description;
 
     //   //Assert
     //   Assert.AreEqual(updatedDescription, result);
     // }
 
     [TestMethod]
-    public void GetAll_ReturnsEmptyList_ItemList()
+    public void GetAll_ReturnsEmptyList_ClientList()
     {
       // Arrange
-      List<Item> newList = new List<Item> { };
+      List<Client> newList = new List<Client> { };
 
       // Act
-      List<Item> result = Item.GetAll();
+      List<Client> result = Client.GetAll();
 
       // Assert
       CollectionAssert.AreEqual(newList, result);
     }
 
     [TestMethod]
-    public void GetAll_ReturnsItems_ItemList()
+    public void GetAll_ReturnsClients_ClientList()
     {
       //Arrange
       string description01 = "Walk the dog";
       string description02 = "Wash the dishes";
-      Item newItem1 = new Item(description01);
-      newItem1.Save();
-      Item newItem2 = new Item(description02);
-      newItem2.Save();
-      List<Item> newList = new List<Item> { newItem1, newItem2 };
+      Client newClient1 = new Client(description01);
+      newClient1.Save();
+      Client newClient2 = new Client(description02);
+      newClient2.Save();
+      List<Client> newList = new List<Client> { newClient1, newClient2 };
 
       //Act
-      List<Item> result = Item.GetAll();
+      List<Client> result = Client.GetAll();
 
       //Assert
       CollectionAssert.AreEqual(newList, result);
     }
 
         [TestMethod]
-    public void Equals_ReturnsTrueIfDescriptionsAreTheSame_Item()
+    public void Equals_ReturnsTrueIfDescriptionsAreTheSame_Client()
     {
       // Arrange, Act
-      Item firstItem = new Item("Mow the lawn");
-      Item secondItem = new Item("Mow the lawn");
+      Client firstClient = new Client("Mow the lawn");
+      Client secondClient = new Client("Mow the lawn");
 
       // Assert
-      Assert.AreEqual(firstItem, secondItem);
+      Assert.AreEqual(firstClient, secondClient);
     }
 
     // [TestMethod]
-    // public void GetId_ItemsInstatiateWithAnIdAndGetterReturns_Int()
+    // public void GetId_ClientsInstatiateWithAnIdAndGetterReturns_Int()
     // {
     //   //Arrange
     //   string description = "Walk the dog.";
-    //   Item newItem = new Item(description);
+    //   Client newClient = new Client(description);
 
     //   //Act
-    //   int result = newItem.Id;
+    //   int result = newClient.Id;
 
     //   //Assert
     //   Assert.AreEqual(1, result);
     // }
 
     // [TestMethod]
-    // public void Find_ReturnsCorrectItem_Item()
+    // public void Find_ReturnsCorrectClient_Client()
     // {
     //   //Arrange
     //   string description01 = "Walk the dog";
     //   string description02 = "Wash the dishes";
-    //   Item newItem1 = new Item(description01);
-    //   Item newItem2 = new Item(description02);
+    //   Client newClient1 = new Client(description01);
+    //   Client newClient2 = new Client(description02);
 
     //   // Act
-    //   Item result = Item.Find(2);
+    //   Client result = Client.Find(2);
 
     //   // Assert
-    //   Assert.AreEqual(newItem2, result);
+    //   Assert.AreEqual(newClient2, result);
     // }
 
     // [TestMethod]
@@ -151,46 +151,46 @@ namespace ToDoList.Tests
     // }
 
         [TestMethod]
-    public void GetAll_ReturnsEmptyListFromDatabase_ItemList()
+    public void GetAll_ReturnsEmptyListFromDatabase_ClientList()
     {
       // Arrange
-      List<Item> newList = new List<Item> { };
+      List<Client> newList = new List<Client> { };
 
       // Act
-      List<Item> result = Item.GetAll();
+      List<Client> result = Client.GetAll();
 
       // Assert
       CollectionAssert.AreEqual(newList, result);
     }
 
     [TestMethod]
-    public void Save_SavesToDatabase_ItemList()
+    public void Save_SavesToDatabase_ClientList()
     {
       // Arrange
-      Item testItem = new Item("Most the lawn");
+      Client testClient = new Client("Most the lawn");
 
       // Act
-      testItem.Save();
-      List<Item> result = Item.GetAll();
-      List<Item> testList = new List<Item> { testItem };
+      testClient.Save();
+      List<Client> result = Client.GetAll();
+      List<Client> testList = new List<Client> { testClient };
 
       // Assert
       CollectionAssert.AreEqual(testList, result);
     }
 
         [TestMethod]
-    public void Find_ReturnsCorrectItemFromDatabase_Item()
+    public void Find_ReturnsCorrectClientFromDatabase_Client()
     {
       //Arrange
-      Item newItem = new Item("Mow the lawn");
-      newItem.Save();
-      Item newItem2 = new Item("Wash dishes");
-      newItem2.Save();
+      Client newClient = new Client("Mow the lawn");
+      newClient.Save();
+      Client newClient2 = new Client("Wash dishes");
+      newClient2.Save();
 
       //Act
-      Item foundItem = Item.Find(newItem.Id);
+      Client foundClient = Client.Find(newClient.Id);
       //Assert
-      Assert.AreEqual(newItem, foundItem);
+      Assert.AreEqual(newClient, foundClient);
     }
   }
 

@@ -2,11 +2,11 @@
   Layout = "_Layout";
 }
 
-@model ToDoList.Models.Item
+@model HairSalon.Models.Client
 
-<p><strong>NOTE:</strong> You need to have at least one stylist before you can add an item!</p>
+<p><strong>NOTE:</strong> You need to have at least one stylist before you can add an client!</p>
 <p>Go to @Html.ActionLink("this page", "Create", "Stylists") to create a stylist.</p>
-<h4>Add a new item</h4>
+<h4>Add a new client</h4>
 
 @using (Html.BeginForm())
 {
@@ -17,6 +17,6 @@
   @Html.DropDownList("StylistId")
 
 
-  <input type="submit" value="Add new item" class="btn btn-primary" />
+  <input type="submit" value="Add new client" class="btn btn-primary" />
 }
-<p>@Html.ActionLink("Show all items", "Index")</p>
+<p>@Html.ActionLink("Show all clients", "Index")</p>

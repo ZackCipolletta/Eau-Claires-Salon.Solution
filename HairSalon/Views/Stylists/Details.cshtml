@@ -2,24 +2,24 @@
   Layout = "_Layout";
 }
 
-@model ToDoList.Models.Stylist
-@using ToDoList.Models
+@model HairSalon.Models.Stylist
+@using HairSalon.Models
 
 <h2>Stylist Details</h2>
 <hr />
 <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)<h3>
 
-@if (@Model.Items.Count == 0)
+@if (@Model.Clients.Count == 0)
 {
-  <h3>No items have been added to this stylist yet!</h3>
+  <h3>No clients have been added to this stylist yet!</h3>
 } 
 else
 {
-  <h3>Items:</h3>
+  <h3>Clients:</h3>
   <ul>
-    @foreach (Item item in Model.Items)
+    @foreach (Client client in Model.Clients)
     {
-      <li>@Html.ActionLink($"{item.Description}", "Details", "Items", new { id = item.ItemId })</li>
+      <li>@Html.ActionLink($"{client.Description}", "Details", "Clients", new { id = client.ClientId })</li>
     }
   </ul>
 }
