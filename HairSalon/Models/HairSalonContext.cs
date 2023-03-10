@@ -8,5 +8,5 @@ namespace HairSalon.Models
     public DbSet<Stylist> Stylists { get; set; }
 
     public HairSalonContext(DbContextOptions options) : base(options) { }
-}
+  }
 }
