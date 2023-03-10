@@ -6,9 +6,20 @@
 
 <h1>Clients</h1>
 
-<ul>
-  @foreach(Client client in Model)
+    <div class="justify-right">
+  @using (Html.BeginForm("Find", "Clients", "post"))
   {
-  <li>@Html.ActionLink($"{client.Name}", "Details", new { id = client.ClientId}) | @client.Stylist.Name</li>
+    @Html.Label("Search for a client")
+    <p>@Html.TextBox("queryString")</p>
+    <p></p>
+    <p class="button"><input type="submit" value="Search" class="button"></p>
+  }
+    <p></p>
+    </div>
+
+<ul>
+  @foreach (Client client in Model)
+  {
+    <li>@Html.ActionLink($"{client.Name}", "Details", new { id = client.ClientId}) | @client.Stylist.Name</li>
   }
 </ul>

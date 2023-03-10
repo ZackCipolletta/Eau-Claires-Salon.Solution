@@ -8,26 +8,26 @@
 
 @if (@Model.Count == 0)
 {
-      <h3>No stylists have been added yet!</h3>
+  <h3>No stylists have been added yet!</h3>
 }
 else
 {
-  <div class="justify-right">
-  @using (Html.BeginForm("Find", "Stylists", "post"))
-  {
-    @Html.Label("Search for a stylist")
-          <p>@Html.TextBox("queryString")</p>
-          <p></p>
-          <p class="button"><input type="submit" value="Search for a stylist" class="button"></p>
-  }
-  <p></p>
-  </div>
+    <div class="justify-right">
+    @using (Html.BeginForm("Find", "Stylists", "post"))
+    {
+      @Html.Label("Search for a stylist")
+        <p>@Html.TextBox("queryString")</p>
+        <p></p>
+        <p class="button"><input type="submit" value="Search" class="button"></p>
+    }
+    <p></p>
+    </div>
 
-  <ul>
+    <ul>
     @foreach (Stylist stylist in Model)
     {
       <li>@Html.ActionLink($"{stylist.Name}", "Details", new { id = stylist.StylistId })</li>
     }
-  </ul>
+    </ul>
 }
 

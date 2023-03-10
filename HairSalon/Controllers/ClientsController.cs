@@ -30,6 +30,15 @@ namespace HairSalon.Controllers
     }
 
     [HttpPost]
+    public ActionResult Find(string queryString)
+    {
+      List<Client> model = _db.Clients.Include(client => client.Stylist)
+                      .Where(model => model.Name.Contains(queryString)).ToList();
+      return View("Index", model);
+    }
+
+
+    [HttpPost]
     public ActionResult Create (Client client)
     {
       if (client.StylistId == 0)
