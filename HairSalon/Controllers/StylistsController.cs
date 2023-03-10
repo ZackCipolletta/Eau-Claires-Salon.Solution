@@ -18,16 +18,20 @@ namespace HairSalon.Controllers
 
     public ActionResult Index()
     {
-      List<Stylist> model = _db.Stylists
-                          .Include(stylist => stylist)
-                          .ToList();
-
+      List<Stylist> model = _db.Stylists.ToList();
       return View(model);
     }
 
     public ActionResult Create()
     {
       return View();
+    }
+
+    [HttpPost]
+    public ActionResult Find(string queryString)
+    {
+      List<Stylist> model = _db.Stylists.Where(model => model.Name.Contains(queryString)).ToList();
+      return View("Index", model);
     }
 
     [HttpPost]
@@ -47,13 +51,6 @@ namespace HairSalon.Controllers
     {
       Stylist thisStylist = _db.Stylists.FirstOrDefault(client => client.StylistId == id);
       return View(thisStylist);
-    }
-
-    [HttpPost]
-    public ActionResult Find(string queryString)
-    {
-      List<Stylist> model = _db.Stylists.Where(model => model.Name.Contains(queryString)).ToList();
-      return View("Index", model);
     }
 
     public ActionResult Delete(int id)
