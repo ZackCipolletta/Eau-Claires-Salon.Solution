@@ -135,19 +135,19 @@ namespace ToDoList.Tests
     // }
 
     // [TestMethod]
-    // public void Find_ReturnsCorrectCategory_Category()
+    // public void Find_ReturnsCorrectStylist_Stylist()
     // {
     //   //Arrange
     //   string name01 = "Work";
     //   string name02 = "School";
-    //   Category newCategory1 = new Category(name01);
-    //   Category newCategory2 = new Category(name02);
+    //   Stylist newStylist1 = new Stylist(name01);
+    //   Stylist newStylist2 = new Stylist(name02);
 
     //   //Act
-    //   Category result = Category.Find(2);
+    //   Stylist result = Stylist.Find(2);
 
     //   //Assert
-    //   Assert.AreEqual(newCategory2, result);
+    //   Assert.AreEqual(newStylist2, result);
     // }
 
         [TestMethod]

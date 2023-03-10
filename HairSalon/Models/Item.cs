@@ -4,8 +4,8 @@ namespace ToDoList.Models
   {
     public string Description { get; set; }
     public int ItemId { get; set; }
-    public int CategoryId { get; set; }
-    public Category Category { get; set; }
+    public int StylistId { get; set; }
+    public Stylist Stylist { get; set; }
 
     // public Item(string description)
     // {

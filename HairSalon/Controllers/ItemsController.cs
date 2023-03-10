@@ -18,21 +18,21 @@ namespace ToDoList.Controllers
 
     public ActionResult Index()
     {
-      List<Item> model = _db.Items.Include(item => item.Category).ToList();
+      List<Item> model = _db.Items.Include(item => item.Stylist).ToList();
       // ViewBag.PageTitle = "View All Items"; if using this, naviage to _Layout.cshtml and update the head to include the page title from the ViewBag property.  Be sure to set this for each page or the default title for the page will be the current URL.
       return View(model);
     }
 
     public ActionResult Create()
     {
-      ViewBag.CategoryId = new SelectList(_db.Categories, "CategoryId", "Name");
+      ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name");
       return View();
     }
 
     [HttpPost]
     public ActionResult Create (Item item)
     {
-      if (item.CategoryId == 0)
+      if (item.StylistId == 0)
       {
         return RedirectToAction("Create");
       }
@@ -43,14 +43,14 @@ namespace ToDoList.Controllers
 
     public ActionResult Details(int id)
     {
-      Item thisItem = _db.Items.Include(item => item.Category).FirstOrDefault(item => item.ItemId == id);
+      Item thisItem = _db.Items.Include(item => item.Stylist).FirstOrDefault(item => item.ItemId == id);
       return View(thisItem);
     }
 
     public ActionResult Edit(int id)
     {
       Item thisItem = _db.Items.FirstOrDefault(item => item.ItemId == id);
-      ViewBag.CategoryId = new SelectList(_db.Categories, "CategoryId", "Name");
+      ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name");
       return View(thisItem);
     }
 

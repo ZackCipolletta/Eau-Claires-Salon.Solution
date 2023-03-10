@@ -6,18 +6,18 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ToDoList.Controllers
 {
-  public class CategoriesController : Controller
+  public class StylistsController : Controller
   {
 
     private readonly ToDoListContext _db;
-    public CategoriesController(ToDoListContext db)
+    public StylistsController(ToDoListContext db)
     {
       _db = db;
     }
 
     public ActionResult Index()
     {
-      List<Category> model = _db.Categories.ToList();
+      List<Stylist> model = _db.Stylists.ToList();
       return View(model);
     }
 
@@ -27,35 +27,35 @@ namespace ToDoList.Controllers
     }
 
     [HttpPost]
-    public ActionResult Create (Category category)
+    public ActionResult Create (Stylist stylist)
     {
-      _db.Categories.Add(category);
+      _db.Stylists.Add(stylist);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
 
     public ActionResult Details(int id)
     {
-      Category thisCategory = _db.Categories.Include(category => category.Items).FirstOrDefault(category => category.CategoryId == id);
-      return View(thisCategory);
+      Stylist thisStylist = _db.Stylists.Include(stylist => stylist.Items).FirstOrDefault(stylist => stylist.StylistId == id);
+      return View(thisStylist);
     }
     public ActionResult Edit(int id)
     {
-      Category thisCategory = _db.Categories.FirstOrDefault(item => item.CategoryId == id);
-      return View(thisCategory);
+      Stylist thisStylist = _db.Stylists.FirstOrDefault(item => item.StylistId == id);
+      return View(thisStylist);
     }
 
     public ActionResult Delete(int id)
     {
-      Category thisCategory = _db.Categories.FirstOrDefault(category => category.CategoryId == id);
-      return View(thisCategory);
+      Stylist thisStylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == id);
+      return View(thisStylist);
     }
 
     [HttpPost, ActionName("Delete")]
     public ActionResult DeleteConfirmed(int id)
     {
-      Category thisCategory = _db.Categories.FirstOrDefault(category => category.CategoryId == id);
-      _db.Categories.Remove(thisCategory);
+      Stylist thisStylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == id);
+      _db.Stylists.Remove(thisStylist);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
