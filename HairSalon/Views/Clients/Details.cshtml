@@ -8,11 +8,8 @@
 <hr />
 <h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</h3>
 <h4>@Html.DisplayNameFor(model => model.Stylist): @Html.DisplayFor(model => model.Stylist.Name)</h4>
-<div class="client-links">
-<p>@Html.ActionLink("Edit Client", "Edit", new { id = Model.ClientId })</p>
-<p>@Html.ActionLink("Delete Client", "Delete", new { id = Model.ClientId })</p>
-<p>@Html.ActionLink("Back to list", "Index")</p>
+<div class="right-side-links">
+<p class="index-links">@Html.ActionLink("Edit Client", "Edit", new { id = Model.ClientId })</p>
+<p class="index-links">@Html.ActionLink("Delete Client", "Delete", new { id = Model.ClientId })</p>
+<p class="index-links">@Html.ActionLink("Back to list", "Index")</p>
 </div>
-<br>
-<br>
-<br>
