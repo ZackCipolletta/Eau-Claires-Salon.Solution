@@ -65,7 +65,12 @@ p.index-links{
 
 .right-side-links{
 	float: right;
-	margin-top: -70px;
+	margin-top: -125px;
+}
+
+.right-side-client-links{
+	float: right;
+	margin-top: -75px;
 }
 
 h1 {
