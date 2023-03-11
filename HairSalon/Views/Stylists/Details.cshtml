@@ -24,11 +24,6 @@
     </ul>
     }
 
-      @* @foreach (Client client in Model)
-  {
-    <li>@Html.ActionLink($"{client.Name}", "Details", new { id = client.ClientId}) | @client.Stylist.Name</li>
-  } *@
-
 <div class="right-side-links stylist-links">
   <p class="index-links">@Html.ActionLink("Edit Stylist", "Edit", new { id = Model.StylistId })</p>
   <p class="index-links">@Html.ActionLink("Delete Stylist", "Delete", new { id = Model.StylistId })</p>
