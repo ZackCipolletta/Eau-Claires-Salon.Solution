@@ -3,28 +3,32 @@
 }
 
 @model HairSalon.Models.Stylist
+@using HairSalon.Models
 
-@if (@Model.Clients.Count == null || @Model.Clients.Count == 0)
+@if (@Model.Clients == null || @Model.Clients.Count == 0)
 {
   <h2>Are you sure you want to delete this?</h2>
 
-  @* @Html.DisplayNameFor(model => model.Name)
+  @Html.DisplayNameFor(model => model.Name)<span></span>
   @Html.DisplayFor(model => model.Name);
   <p></p>
   @using (Html.BeginForm())
   {
-        <input type="submit" value="Delete" />
-  } *@
+    <input type="submit" value="Delete" />
+  }
 }
 else
 {
-      <h3>You must re-assign all clients before you can delete this stylist!</h3>
-      @* <ul>
+  <h3>You must re-assign all clients before you can delete this stylist!</h3>
+  <hr />
+  <p></p>
+  <ul>
+    <span>Clients:</span>
     @foreach (Client client in Model.Clients)
     {
       <li>@Html.ActionLink($"{client.Name}", "Details", "Clients", new { id = client.ClientId })</li>
     }
-      </ul> *@
+  </ul>
 }
 <p></p>
-@Html.ActionLink("Back to List", "Index")
+<div class="delete-stylist" >@Html.ActionLink("Back to List", "Index")</div>

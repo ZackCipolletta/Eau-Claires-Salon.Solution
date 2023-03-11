@@ -71,3 +71,8 @@ p.index-links{
 h1 {
   margin-bottom: 0;
 }
+
+.delete-stylist{
+	float: right;
+	margin-top: -50px;
+}
