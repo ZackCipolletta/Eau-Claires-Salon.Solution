@@ -22,7 +22,7 @@ This web application is a vendor and order tracker built using C#.  The user has
 1. Clone this repo.
 2. Open your terminal (e.g., Terminal or GitBash) and navigate to this project's production directory named "HairSalon".
 3. Run `dotnet watch run` in the command line to start the project in development mode with a watcher (Optionally, you can run "dotnet build" to compile the app without running it). 
-4. Create a file named [appsettings.json] in the production directory (HairSalon) and include a new database connection string. The string should be as follows:
+4. Create a file named ['appsettings.json'] in the production directory (HairSalon) and include a new database connection string. The string should be as follows:
 {
   "ConnectionStrings": {
     "DefaultConnection": "Server=localhost;Port=3306;database=[DATABASE-NAME-HERE];uid=[YOUR-USERNAME-HERE];pwd=[YOUR-PASSWORD-HERE];",
