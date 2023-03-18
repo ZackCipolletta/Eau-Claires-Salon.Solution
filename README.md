@@ -21,14 +21,16 @@ This web application is a vendor and order tracker built using C#.  The user has
 
 1. Clone this repo.
 2. Open your terminal (e.g., Terminal or GitBash) and navigate to this project's production directory named "HairSalon".
-3. Run `dotnet watch run` in the command line to start the project in development mode with a watcher (Optionally, you can run "dotnet build" to compile the app without running it). 
+3. Open MySQL Workbench, under the administration tab of the navigator click the link named "Data Import/Restore' under the 'Management' heading. Select the option to 'Import from Self-Contained File'.  Then use the file picker to navigate to the directory for this project and select the folder named 'Production Database', open the file in that folder.  In MySQL Workbench under the section named 'Default Schema to be Imported To', create a New schema and give it a name. Click the 'Start Import' button.
 4. Create a file named ['appsettings.json'] in the production directory (HairSalon) and include a new database connection string. The string should be as follows:
 {
   "ConnectionStrings": {
     "DefaultConnection": "Server=localhost;Port=3306;database=[DATABASE-NAME-HERE];uid=[YOUR-USERNAME-HERE];pwd=[YOUR-PASSWORD-HERE];",
   }
 }
-5. Open the browser to https://localhost:5001.
+Change the database name to the same name as the schema created in stip 3, update username and password to match the username and password of your computer.
+5. Run `dotnet watch run` in the command line to start the project in development mode with a watcher (Optionally, you can run "dotnet build" to compile the app without running it). 
+6. Open the browser to https://localhost:5001.
 
 ## Known Bugs
 
@@ -56,3 +58,6 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+
+Open MySQL Workbench, under the administration tab of the navigator click the link named "Data Import/Restore' under the 'Management' heading. Select the option to 'Import from Self-Contained File'.  Then use the file picker to navigate to the directory for this project and select the folder named 'Production Database', open the file in that folder.  In MySQL Workbench under the section named 'Default Schema to be Imported To', create a New schema and give it a name. Click the 'Start Import' button.
