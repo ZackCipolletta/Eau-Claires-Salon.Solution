@@ -15,7 +15,7 @@
 * EF core
 
 ## Description
-This web application is a vendor and order tracker built using C#.  The user has the ability to add a new vendor to the list and add orders to an existing vendor including the Order title, description, price and date.
+This web application is an administrative site for a Salon.  A user can track which stylists have which clients and see the opposite relationship by seeing which stylist is assigned to each individual client.  The user also has the ability to search all or part of a stylist's or client's name.  A user has the ability to add new clients and stylits and to assign a stylist to a client and the ability to edit both stylist's and client's names.  A user is not able to delete a stylist until all of their assigned clients have been reassigned to another stylist.
 
 ## Setup/Installation Requirements
 
@@ -39,7 +39,7 @@ Change the database name to the same name as the schema created in stip 3, updat
 ## License
 MIT
 
-Copyright (c) 3/310/2023 Zachary Cipolletta
+Copyright (c) 3/10/2023 Zachary Cipolletta
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
