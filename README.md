@@ -58,6 +58,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
-
-Open MySQL Workbench, under the administration tab of the navigator click the link named "Data Import/Restore' under the 'Management' heading. Select the option to 'Import from Self-Contained File'.  Then use the file picker to navigate to the directory for this project and select the folder named 'Production Database', open the file in that folder.  In MySQL Workbench under the section named 'Default Schema to be Imported To', create a New schema and give it a name. Click the 'Start Import' button.
